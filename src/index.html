@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Contact form</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font/fonts.css">
+    <script src="../src/main.js" defer></script>
+</head>
+<body>
+    <main class="karla bg-[hsl(148,38%,91%)]">
+        <section class="flex justify-center pt-32 pb-80 px-5 md:px-0">   
+            <section class="bg-white grid gap-7 p-5 md:p-10 rounded-2xl">
+                <h1 class="text-[hsl(187,24%,22%)] text-3xl font-bold">Contact us</h1>
+                <form id="contact" action="" class="grid gap-6"  data-js-form novalidate>
+
+                    <div class="grid md:flex gap-5">
+                        <div class="grid gap-1 group has-[input:required]">
+                            <label for="firstName" class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)] 
+                            after:ml-2 after:text-green-700 group-has-[input:required]:after:content-['*']">First Name</label>
+                            <input type="text" 
+                            id="firstName" 
+                            name="firstName" 
+                            class="border border-[hsl(186,15%,59%)] rounded-lg py-2 pl-3 pr-28
+                            hover:border-[hsl(169,82%,27%)]"
+                            required
+                            minlength="3"
+                            maxlength="12"
+                            aria-errormessage="firstNameError"
+                            >
+                            <span class="text-[hsl(0,66%,54%)] text-[clamp(0.9rem,0.8vw,10rem)]" id="firstNameError" data-js-form-field-errors></span>
+                        </div>
+                        <div class="grid gap-1 group has-[input:required]">
+                            <label for="lastName" class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)]
+                            after:ml-2 after:text-green-700 group-has-[input:required]:after:content-['*']">Last Name</label>
+                            <input type="text" 
+                            id="lastName" 
+                            name="lastName" 
+                            class="border border-[hsl(186,15%,59%)] rounded-lg py-2 pl-3 pr-28
+                            hover:border-[hsl(169,82%,27%)]"
+                            required
+                            minlength="3"
+                            maxlength="12"
+                            aria-errormessage="secondNameError">    
+                            <span class="text-[hsl(0,66%,54%)] text-[clamp(0.9rem,0.8vw,10rem)]" id="secondNameError" data-js-form-field-errors></span>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-1 group has-[input:required]">
+                        <label for="email" class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)]
+                        after:ml-2 after:text-green-700 group-has-[input:required]:after:content-['*']">Email Address</label>
+                        <input type="email" 
+                        id="email" 
+                        name="email" 
+                        class="border border-[hsl(186,15%,59%)] rounded-lg py-2 px-3
+                        hover:border-[hsl(169,82%,27%)]"
+                        required
+                        minlength="8"
+                        maxlength="28"
+                        pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
+                        aria-errormessage="emailError">
+                        <span class="text-[hsl(0,66%,54%)] text-[clamp(0.9rem,0.8vw,10rem)]" id="emailError" data-js-form-field-errors></span>
+                    </div>
+
+
+                    <div class="grid gap-1 group has-[input:required]">
+                        <legend class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)]
+                        after:ml-2 after:text-green-700 group-has-[input:required]:after:content-['*']">Query Type</legend>
+                        <div class="grid md:flex gap-5">
+                            <div class="border border-[hsl(186,15%,59%)] rounded-lg py-2 pl-5 pr-32 flex gap-3 hover:border-[hsl(169,82%,27%)]">
+                                <input type="radio" 
+                                id="GeneralEnquiry" 
+                                name="queryType"
+                                required
+                                aria-errormessage="queryTypeError">
+                                <label for="GeneralEnquiry" class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)]">General Enquiry</label>         
+                                <!-- <span class="text-[hsl(0,66%,54%)] text-[clamp(0.9rem,0.8vw,10rem)]" id="queryTypeError" data-js-form-field-errors></span>                        -->
+                            </div>
+                            <div class="border border-[hsl(186,15%,59%)] rounded-lg py-2 pl-5 pr-32 flex gap-3 hover:border-[hsl(169,82%,27%)]">
+                                <input type="radio" 
+                                id="SupportRequest" 
+                                name="queryType"
+                                required
+                                aria-errormessage="queryTypeError">
+                                <label for="SupportRequest" class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)]">Support Request</label>
+                                <!-- <span class="text-[hsl(0,66%,54%)] text-[clamp(0.9rem,0.8vw,10rem)]" id="queryTypeError" data-js-form-field-errors></span> -->
+                            </div>
+                        </div>
+                        <span class="text-[hsl(0,66%,54%)] text-[clamp(0.9rem,0.8vw,10rem)]" id="queryTypeError" data-js-form-field-errors></span>
+                    </div>
+                
+                    <div class="grid gap-1">
+                        <label for="message" class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)]">Message</label>
+                        <textarea name="message" id="message" class="border border-[hsl(186,15%,59%)] rounded-lg py-2 px-3 hover:border-[hsl(169,82%,27%)]"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-[auto_1fr] items-center gap-x-5 group has-[input:required]"> 
+                        <input type="checkbox" id="checkbox" name="checkbox" required aria-errormessage="checkboxError"> 
+                        <label for="checkbox" class="text-[clamp(1rem,0.9vw,10rem)] text-[hsl(187,24%,22%)] 
+                        after:ml-2 after:text-green-700 group-has-[input:required]:after:content-['*']">
+                        I consent to being contacted by the team</label> 
+                        <span class="text-[hsl(0,66%,54%)] text-[clamp(0.9rem,0.8vw,10rem)] col-span-2" id="checkboxError" data-js-form-field-errors></span> 
+                    </div>
+
+                    <input type="submit" value="Submit" class="py-3 bg-[hsl(169,82%,27%)] rounded-lg 
+                    text-white cursor-pointer font-bold text-[clamp(1.1rem,1vw,10rem)] hover:bg-[hsl(187,24%,22%)] duration-300 ease-in-out">
+                </form>
+                
+            </section>
+            <div class="fixed top-7 gap-3 bg-[hsl(187,24%,22%)] p-5 mx-3 md:mx-0 rounded-2xl text-white hidden duration-300 ease-in-out" data-js-success-block>
+                <div class="flex gap-3 items-center">
+                    <img src="../assets/images/icon-success-check.svg" alt="icon-success-check">
+                    <h2 class="font-bold text-[clamp(1.1rem,1vw,10rem)]">Message Sent!</h2>
+                </div>
+                <p class="text-[hsl(186,15%,59%)] text-[clamp(1.1rem,0.9vw,10rem)]">Thanks for completing the form. We'll be in touch soon!</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
